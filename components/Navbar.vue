@@ -1,10 +1,12 @@
 <template>
     <div class="navbar-wrapper">
-      <img class="nav-logo" src="bicycle.png" alt="Bicycle logo">
-      <a href="#">About</a>
-      <a href="#">Events</a>
-      <a href="#">News</a>
-      <a href="#">Contact Us</a>
+      <a href="#">
+        <img class="nav-logo" src="bicycle.png" alt="Bicycle logo">
+      </a>
+      <a href="#">Route Planner</a>
+      <Star/>
+      <a href="#">My Route</a>
+
     </div>
 </template>
 

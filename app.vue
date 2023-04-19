@@ -37,8 +37,25 @@ const mapping = { ContentPage, Banner, Grid };
 <style>
 :root {
     --contentMaxWidth: 70ch;
-    --color-100: coral;
-    --color-200: antiquewhite;
+    --color-100: #b130b4;
+    --color-200: #7255bd;
+
+    /* px value based on rem 16px */
+    --spacer-0: 0;        /* 0 */
+    --spacer-1: 0.25rem;  /* 4px */
+    --spacer-2: 0.5rem;   /* 8px */
+    --spacer-3: 0.75rem;  /* 12px */
+    --spacer-4: 1rem;     /* 16px */
+    --spacer-5: 1.25rem;  /* 20px */
+    --spacer-6: 1.5rem;   /* 24px */
+    --spacer-7: 1.75rem;  /* 28px */
+    --spacer-8: 2rem;     /* 32px */
+    --spacer-9: 3rem;     /* 48px */
+    --spacer-10: 4rem;    /* 64px */
+    --spacer-11: 5rem;    /* 80px */
+    --spacer-12: 6rem;    /* 96px */
+
+
 }
 
 html {
@@ -55,5 +72,19 @@ body {
 
 a {
   font-family: cursive;
+}
+
+/* Utility classes */
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
 }
 </style>
