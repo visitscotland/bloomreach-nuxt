@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Grid</h1>
-        <pre>{{ document }}</pre>
+        <h2>Places</h2>
+        <Place v-for="(item, key) in itemData" :key="key" :document="page.getContent(item.$ref)" :page="props.page" />
     </div>
 </template>
 
@@ -9,17 +9,17 @@
 const props = defineProps<{ component: Component, page: Page }>();
 const { component, page } = props;
 
-// console.log(component)
-
 const documentRef = component.model.models.pagination.$ref;
 const document = page.getContent(documentRef);
 
+// Get grid item references.
 const items = document.model.items;
-const item1Ref = items[0].$ref;
 
-const item = computed(() => page.getContent(item1Ref));
-
-console.log(item);
-
-// console.log(document);
+// Filter out any content that doesn't use the Place content type.
+const itemData = items.filter((item) => {
+    const data = page.getContent(item.$ref).model.data;
+    if (data.contentType === 'brxsaas:Place') {
+        return data;
+    }
+});
 </script>
