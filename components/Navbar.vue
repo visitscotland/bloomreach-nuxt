@@ -3,16 +3,20 @@
       <a href="#">
         <img class="nav-logo" src="bicycle.png" alt="Bicycle logo">
       </a>
-      <a href="#">Route Planner</a>
-      <Star/>
-      <a href="#">My Route</a>
+      <div class="flex gap-8">
+        <a href="#">Route Planner</a>
+        <div class="flex items-center gap-1">
+          <Star/>
+          <a href="#">My Route</a>
+        </div>
+      </div>
 
     </div>
 </template>
 
 <style scoped>
   .nav-logo {
-    max-width: 100px;
+    max-width: var(--spacer-9);
   }
 
   .navbar-wrapper {

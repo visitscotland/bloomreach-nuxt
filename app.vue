@@ -36,7 +36,7 @@ const mapping = { ContentPage, Banner, Grid };
 
 <style>
 :root {
-    --contentMaxWidth: 70ch;
+    --contentMaxWidth: 80ch;
     --color-100: #b130b4;
     --color-200: #7255bd;
 
@@ -86,5 +86,21 @@ a {
 
 .items-center {
   align-items: center;
+}
+
+.gap-1 {
+  gap: var(--spacer-1);
+}
+
+.gap-5 {
+  gap:var(--spacer-5);
+}
+
+.gap-8 {
+  gap:var(--spacer-8);
+}
+
+.gap-9 {
+  gap:var(--spacer-9);
 }
 </style>
