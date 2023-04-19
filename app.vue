@@ -3,6 +3,7 @@ import axios from 'axios';
 import ContentPage from './components/ContentPage.vue';
 import Banner from './components/Banner.vue';
 import Grid from './components/Grid.vue';
+import Article from './components/Article.vue';
 
 // const { VUE_APP_BRXM_ENDPOINT } = useRuntimeConfig();
 // console.log(VUE_APP_BRXM_ENDPOINT)
@@ -19,7 +20,7 @@ const configuration = {
     endpoint,
     httpClient: axios,
 };
-const mapping = { ContentPage, Banner, Grid };
+const mapping = { ContentPage, Banner, Grid, Article };
 </script>
     
 <template>

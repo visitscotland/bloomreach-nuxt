@@ -2,8 +2,6 @@
     <div>
         <h1>Grid</h1>
         <pre>{{ document }}</pre>
-        <!-- <pre>{{ br-component.getModels().pagination.$ref }}</pre> -->
-        <!-- <pre>{{ data }}</pre> -->
     </div>
 </template>
 
@@ -11,10 +9,17 @@
 const props = defineProps<{ component: Component, page: Page }>();
 const { component, page } = props;
 
-const documentRef = computed(() => props.component.getModels().document);
-const document = computed(() => documentRef.value && props.page.getContent(documentRef.value));
-// const data = document?.getData()
+// console.log(component)
 
-console.log(document)
+const documentRef = component.model.models.pagination.$ref;
+const document = page.getContent(documentRef);
 
+const items = document.model.items;
+const item1Ref = items[0].$ref;
+
+const item = computed(() => page.getContent(item1Ref));
+
+console.log(item);
+
+// console.log(document);
 </script>
