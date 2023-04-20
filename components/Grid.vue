@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container mb-4">
         <div class="row">
             <div class="col">
                 <h2>Places</h2>
@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <Place v-for="(item, key) in itemRefs" :key="key" :document="page.getContent(item.$ref)" :page="props.page" />
-            <button v-if="!viewAll" @click="showMore">View all places</button>
+            <button class="btn btn-primary" style="margin: 0 auto;width: 200px;" v-if="!viewAll" @click="showMore">View all places</button>
         </div>
     </div>
 </template>
