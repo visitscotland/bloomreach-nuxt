@@ -4,6 +4,7 @@ import ContentPage from './components/ContentPage.vue';
 import Banner from './components/Banner.vue';
 import Grid from './components/Grid.vue';
 import Article from './components/Article.vue';
+import Place from './components/Place.vue';
 
 // const { VUE_APP_BRXM_ENDPOINT } = useRuntimeConfig();
 // console.log(VUE_APP_BRXM_ENDPOINT)
@@ -12,15 +13,17 @@ import Article from './components/Article.vue';
 const route = useRoute().path;
 
 // const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages`;
-// const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages?preview-token=a7d348bb-adaf-483b-8733-c2639b39a643`;
-const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages?preview-token=47053ca9-2817-448b-b266-b2a79a06e73c`;
+const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages?preview-token=e97e4b9b-be48-48ab-99c1-420e1cf29d61`;
+// const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages`;
 
 const configuration = {
     path: route,
     endpoint,
     httpClient: axios,
 };
-const mapping = { ContentPage, Banner, Grid, Article };
+const mapping = { ContentPage, Banner, Grid, Article, Place };
+
+console.log('test');
 </script>
     
 <template>
