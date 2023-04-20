@@ -1,7 +1,13 @@
 <template>
-    <div>
-        <h2>Places</h2>
-        <Place v-for="(item, key) in itemData" :key="key" :document="page.getContent(item.$ref)" :page="props.page" />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Places</h2>
+            </div>
+        </div>
+        <div class="row">
+            <Place v-for="(item, key) in itemData" :key="key" :document="page.getContent(item.$ref)" :page="props.page" />
+        </div>
     </div>
 </template>
 
