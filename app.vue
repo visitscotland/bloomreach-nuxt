@@ -15,7 +15,7 @@ import Article from './components/Article.vue';
 // Get url of current page.
 const route = useRoute().path;
 
-const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages?preview-token=e97e4b9b-be48-48ab-99c1-420e1cf29d61`;
+const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages?preview-token=ac39437d-0fe8-4f90-8f78-4dadb6d2315e`;
 
 const configuration = {
     path: route,

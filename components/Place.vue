@@ -10,7 +10,7 @@
                 <p><strong>Product ID</strong>: {{ data.productId }}</p>
             </div>
             <div class="card-footer">
-                <a :href="data.url" class="button">VisitScotland page</a>
+                <a :href="data.url" class="btn btn-primary">More about {{ data.displayName }}</a>
             </div>
         </div>
     </div>
@@ -31,18 +31,11 @@
 </script>
 
 <style lang="scss" scoped>
-	a.button {
+	a.btn-primary {
 		background: #af006e;
 		border: 2px solid #af006e;
-		border-radius: 1000px;
 		color: #fff;
-		cursor: pointer;
-		display: inline-block;
 		font-weight: 600;
-		padding: 0.5em 1em;
-		position: relative;
-		text-decoration: none;
-		user-select: none;
 
 		&:focus,
 		&:hover {
@@ -50,6 +43,13 @@
 			border-color: #660041;
 			color: #fff;
 		}
+	}
+
+	.card-footer{
+		background: none;
+		border-top: 0;
+		padding: 1rem;
+		padding-top: 0;
 	}
 
 	img {

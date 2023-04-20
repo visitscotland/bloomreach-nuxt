@@ -25,6 +25,9 @@
 </template>
 
 <style lang="scss" scoped>
+	.navbar {
+		margin-bottom: 2rem;
+	}
 	.navbar-brand{
 		color: #700E57;
 		font-weight: bold;
