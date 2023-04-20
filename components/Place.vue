@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div class="col-12 col-sm-6 col-lg-4">
         <h3>{{ data.displayName }}</h3>
+        <img class="mb-3 p-2" :src="imageUrl" alt="" />
         <div v-html="data.description.value" />
         <p><strong>Latitude</strong>: {{ data.lat }}, <strong>Longitude</strong>: {{ data.lon }}</p>
         <p><strong>Product ID</strong>: {{ data.productId }}</p>
         <p><a :href="data.url" class="button">VisitScotland page</a></p>
-        <img :src="imageUrl" alt="" />
+        
     </div>
 </template>
 
@@ -46,6 +47,6 @@ const imageUrl = imageContent.getOriginal().getUrl();
     }
 
     img {
-        width: 400px;
+        width: 100%;
     }
 </style>

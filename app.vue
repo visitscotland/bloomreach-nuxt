@@ -24,7 +24,7 @@ const mapping = { ContentPage, Banner, Grid, Article };
 </script>
     
 <template>
-    <div>
+    <div class="container">
         <Navbar />
         <br-page :configuration="configuration" :mapping="mapping" />
     </div>
