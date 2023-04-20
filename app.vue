@@ -11,6 +11,7 @@ import ContentPage from './components/ContentPage.vue';
 import Banner from './components/Banner.vue';
 import Grid from './components/Grid.vue';
 import Article from './components/Article.vue';
+import Place from './components/Place.vue';
 
 // Get url of current page.
 const route = useRoute().path;
@@ -22,5 +23,5 @@ const configuration = {
     endpoint,
     httpClient: axios,
 };
-const mapping = { ContentPage, Banner, Grid, Article };
+const mapping = { ContentPage, Banner, Grid, Article, Place };
 </script>
