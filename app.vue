@@ -1,6 +1,6 @@
 <template>
+    <Navbar/>
     <div class="container">
-        <Navbar/>
         <br-page :configuration="configuration" :mapping="mapping" />
     </div>
 </template>
