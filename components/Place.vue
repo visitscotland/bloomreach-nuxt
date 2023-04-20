@@ -1,52 +1,61 @@
 <template>
-    <div class="col-12 col-sm-6 col-lg-4">
-        <h3>{{ data.displayName }}</h3>
-        <img class="mb-3 p-2" :src="imageUrl" alt="" />
-        <div v-html="data.description.value" />
-        <p><strong>Latitude</strong>: {{ data.lat }}, <strong>Longitude</strong>: {{ data.lon }}</p>
-        <p><strong>Product ID</strong>: {{ data.productId }}</p>
-        <p><a :href="data.url" class="button">VisitScotland page</a></p>
-        
-    </div>
+	<div class="col-12 col-sm-6 col-lg-4">
+		<h3>{{ data.displayName }}</h3>
+
+		<img class="mb-3 p-2" :src="imageUrl" alt="" />
+
+		<div v-html="data.description.value" />
+
+		<p>
+			<strong>Latitude</strong>: {{ data.lat }}, <strong>Longitude</strong>:
+			{{ data.lon }}
+		</p>
+		<p>
+			<strong>Product ID</strong>: {{ data.productId }}
+		</p>
+		<p>
+			<a :href="data.url" class="button">VisitScotland page</a>
+		</p>
+	</div>
 </template>
 
 <script setup>
-const props = defineProps({
-    document: Object,
-    page: Object,
-});
+	const props = defineProps({
+		document: Object,
+		page: Object,
+	});
 
-// Get date for the place.
-const data = props.document.model.data;
+	// Get date for the place.
+	const data = props.document.model.data;
 
-// Get the image content and URL.
-const imageContent = props.page.getContent(data.image.$ref);
-const imageUrl = imageContent.getOriginal().getUrl();
+	// Get the image content and URL.
+	const imageContent = props.page.getContent(data.image.$ref);
+	const imageUrl = imageContent.getOriginal().getUrl();
 </script>
 
 <style lang="scss" scoped>
-    a.button {
-        background: #af006e;
-        border: 2px solid #af006e;
-        border-radius: 1000px;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: 600;
-        padding: 0.5em 1em;
-        position: relative;
-        text-decoration: none;
-        user-select: none;
+	a.button {
+		background: #af006e;
+		border: 2px solid #af006e;
+		border-radius: 1000px;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 600;
+		padding: 0.5em 1em;
+		position: relative;
+		text-decoration: none;
+		user-select: none;
 
-        &:focus,
-        &:hover {
-            background: #660041;
-            border-color: #660041;
-            color: #fff;
-        }
-    }
+		&:focus,
+		&:hover {
+			background: #660041;
+			border-color: #660041;
+			color: #fff;
+		}
+	}
 
-    img {
-        width: 100%;
-    }
+	img {
+		width: 100%;
+	}
 </style>
