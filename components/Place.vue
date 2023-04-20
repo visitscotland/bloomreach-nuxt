@@ -1,22 +1,19 @@
 <template>
-	<div class="col-12 col-sm-6 col-lg-4">
-		<h3>{{ data.displayName }}</h3>
-
-		<img class="mb-3 p-2" :src="imageUrl" alt="" />
-
-		<div v-html="data.description.value" />
-
-		<p>
-			<strong>Latitude</strong>: {{ data.lat }}, <strong>Longitude</strong>:
-			{{ data.lon }}
-		</p>
-		<p>
-			<strong>Product ID</strong>: {{ data.productId }}
-		</p>
-		<p>
-			<a :href="data.url" class="button">VisitScotland page</a>
-		</p>
-	</div>
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card mb-4 vs-card">
+            <img class="card-img-top" :src="imageUrl" alt="" />
+            <div class="card-body">
+                <h3 class="card-title h5">{{ data.displayName }}</h3>
+        
+                <template v-html="data.description.value" />
+                <p><strong>Latitude</strong>: {{ data.lat }}, <strong>Longitude</strong>: {{ data.lon }}</p>
+                <p><strong>Product ID</strong>: {{ data.productId }}</p>
+            </div>
+            <div class="card-footer">
+                <a :href="data.url" class="button">VisitScotland page</a>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script setup>
