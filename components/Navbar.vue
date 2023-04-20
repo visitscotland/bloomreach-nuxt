@@ -1,32 +1,28 @@
 <template>
-    <div class="navbar-wrapper">
-      <a href="#">
-        <img class="nav-logo" src="bicycle.png" alt="Bicycle logo">
-      </a>
-      <div class="flex gap-8">
-        <a href="#">Route Planner</a>
-        <div class="flex items-center gap-1">
-          <Star/>
-          <a href="#">My Route</a>
+    <div class="container">
+      <div class="row">
+          
+        <div class="col d-flex justify-content-between align-items-center">
+          <a href="#">
+              <img class="logo" src="bicycle.png" alt="Bicycle logo">
+            </a>
+            <div class="d-flex">
+              <a href="#">Route Planner</a>
+              <div class="ms-4">
+                <div class="me-1 d-inline">
+                  <Star/>
+                </div>
+                <a href="#">My Route</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
     </div>
 </template>
 
 <style scoped>
-  .nav-logo {
-    max-width: 100px; /* todo replace with design token */
-  }
-
-  .navbar-wrapper {
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  a {
-    font-family: sans-serif;
+  .logo {
+    max-width: 70px;
   }
 </style>
