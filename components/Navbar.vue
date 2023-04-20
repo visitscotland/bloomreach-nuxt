@@ -20,7 +20,6 @@
   }
 
   .navbar-wrapper {
-    max-width: 700px; /* todo replace with design token */
     margin: auto;
     display: flex;
     justify-content: space-between;

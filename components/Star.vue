@@ -33,7 +33,7 @@ export default {
 <style scoped>
 
   .star {
-    stroke: var(--color-100);
+    stroke: purple;
   }
   .unselected{
     transition: 0.1s ease-in;
@@ -41,7 +41,7 @@ export default {
   }
   
   .selected {
-    fill: var(--color-100);
+    fill: purple;
     transition: 0.3s ease-out;
   }
 </style>
