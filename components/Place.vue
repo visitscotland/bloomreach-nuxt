@@ -3,7 +3,7 @@
         <div class="card mb-4 vs-card">
             <img class="card-img-top" :src="imageUrl" alt="" />
             <div class="card-body">
-                <h3 class="card-title h5">{{ data.displayName }}</h3>
+                <h3 class="card-title h5">{{ data.title }}</h3>
         
                 <template v-html="data.description.value" />
                 <p><strong>Latitude</strong>: {{ data.lat }}, <strong>Longitude</strong>: {{ data.lon }}</p>
@@ -23,7 +23,7 @@
 	});
 
 	// Get date for the place.
-	const data = props.document.model.data;
+    const data = props.document.model.data;
 
 	// Get the image content and URL.
 	const imageContent = props.page.getContent(data.image.$ref);
