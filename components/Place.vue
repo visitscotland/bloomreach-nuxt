@@ -10,7 +10,7 @@
                 <p><strong>Product ID</strong>: {{ data.productId }}</p>
             </div>
             <div class="card-footer">
-                <a :href="data.url" class="btn btn-primary">More about {{ data.displayName }}</a>
+                <a :href="data.url">More about {{ data.displayName }}</a>
             </div>
         </div>
     </div>
@@ -31,17 +31,12 @@
 </script>
 
 <style lang="scss" scoped>
-	a.btn-primary {
-		background: #af006e;
-		border: 2px solid #af006e;
-		color: #fff;
-		font-weight: 600;
-
+	a {
+		color: #af006e;
+        font-weight: bold;
 		&:focus,
 		&:hover {
-			background: #660041;
-			border-color: #660041;
-			color: #fff;
+			text-decoration: none;
 		}
 	}
 

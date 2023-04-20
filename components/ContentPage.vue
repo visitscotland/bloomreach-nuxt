@@ -24,7 +24,6 @@
     const { title, introduction, content } = document.getData();
 </script>
 
-
 <style lang="scss" scoped>
     .content-page{
         margin-bottom: 1.5rem;

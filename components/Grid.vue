@@ -7,8 +7,22 @@
                 :document="page.getContent(item.$ref)" 
                 :page="props.page" 
             />
-            <button class="btn btn-primary" style="margin: 0 auto;width: 200px;" v-if="!viewAll" @click="showMore">View all places</button>
         </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <button 
+                    class="btn btn-primary" 
+                    v-if="!viewAll" 
+                    @click="showMore"
+                >
+                View all places
+            </button>
+            </div>
+        </div>
+
+
+       
     </div>
 </template>
 
@@ -37,3 +51,19 @@
         viewAll.value = true;
     }
 </script>
+
+<style lang="scss" scoped>
+    .btn-primary {
+		background: #af006e;
+		border: 2px solid #af006e;
+		color: #fff;
+		font-weight: 600;
+
+		&:focus,
+		&:hover {
+			background: #660041;
+			border-color: #660041;
+			color: #fff;
+		}
+	}
+</style>
