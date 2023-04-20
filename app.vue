@@ -3,6 +3,7 @@
     <div class="container">
         <br-page :configuration="configuration" :mapping="mapping" />
     </div>
+    <Footer/>
 </template>
 
 <script setup>

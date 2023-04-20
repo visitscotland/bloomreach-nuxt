@@ -43,7 +43,7 @@
 	.card-footer{
 		background: none;
 		border-top: 0;
-		padding: 1rem;
+		padding: 1.2rem 1rem;
 		padding-top: 0;
 	}
 

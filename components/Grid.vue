@@ -1,6 +1,6 @@
 <template>
     <div class="container mb-4">
-        <div class="row">
+        <div class="row mb-4">
             <Place 
                 v-for="(item, key) in itemRefs" 
                 :key="key" 
@@ -20,9 +20,6 @@
             </button>
             </div>
         </div>
-
-
-       
     </div>
 </template>
 
