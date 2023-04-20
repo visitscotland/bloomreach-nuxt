@@ -1,8 +1,7 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <p>{{ introduction }}</p>
-        <div :html="content.value" />
+        <div v-html="content.value" />
     </div>
 </template>
 

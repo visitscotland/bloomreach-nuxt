@@ -1,12 +1,13 @@
 <template>
-    <div class="container">
+    <div class="container mb-4">
         <div class="row">
             <div class="col">
                 <h2>Places</h2>
             </div>
         </div>
         <div class="row">
-            <Place v-for="(item, key) in itemData" :key="key" :document="page.getContent(item.$ref)" :page="props.page" />
+            <Place v-for="(item, key) in itemRefs" :key="key" :document="page.getContent(item.$ref)" :page="props.page" />
+            <button class="btn btn-primary" style="margin: 0 auto;width: 200px;" v-if="!viewAll" @click="showMore">View all places</button>
         </div>
     </div>
 </template>
@@ -14,6 +15,8 @@
 <script lang="ts" setup>
     const props = defineProps<{ component: Component, page: Page }>();
     const { component, page } = props;
+    const itemsPerPage = ref(3);
+    const viewAll = ref(false);
 
     const documentRef = component.model.models.pagination.$ref;
     const document = page.getContent(documentRef);
@@ -22,10 +25,15 @@
     const items = document.model.items;
 
     // Filter out any content that doesn't use the Place content type.
-    const itemData = items.filter((item) => {
+    const itemRefs = computed(() => items.filter((item) => {
         const data = page.getContent(item.$ref).model.data;
         if (data.contentType === 'brxsaas:Place') {
             return data;
         }
-    });
+    }).slice(0, itemsPerPage.value));
+
+    function showMore() {
+        itemsPerPage.value = Object.keys(itemRefs).length;
+        viewAll.value = true;
+    }
 </script>
