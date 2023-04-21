@@ -13,15 +13,14 @@ import Banner from './components/Banner.vue';
 import Grid from './components/Grid.vue';
 import Article from './components/Article.vue';
 import Place from './components/Place.vue';
+import { ENDPOINT } from './utils/constants';
 
 // Get url of current page.
 const route = useRoute().path;
 
-const endpoint = `https://trial-c11dt83y.bloomreach.io/delivery/site/v1/channels/trip-planner/pages?preview-token=ac39437d-0fe8-4f90-8f78-4dadb6d2315e`;
-
 const configuration = {
     path: route,
-    endpoint,
+    endpoint: ENDPOINT,
     httpClient: axios,
 };
 const mapping = { ContentPage, Banner, Grid, Article, Place };
