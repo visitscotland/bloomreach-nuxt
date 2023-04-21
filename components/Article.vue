@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{ title }}</h1>
+        <h2>{{ title }}</h2>
         <div v-html="body" />
     </div>
 </template>
@@ -14,6 +14,4 @@ const document = page.getContent(documentRef);
 const data = document.data;
 const title = data.title;
 const body = data.body.value;
-
-// console.log(data);
 </script>
