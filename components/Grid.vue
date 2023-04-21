@@ -24,6 +24,9 @@
 </template>
 
 <script lang="ts" setup>
+    import { usePlacesStore } from '../stores/PlacesStore';
+    const placesStore = usePlacesStore()
+
     const props = defineProps<{ component: Component, page: Page }>();
     const { component, page } = props;
     const itemsPerPage = ref(3);
@@ -35,18 +38,37 @@
     // Get grid item references.
     const items = document.model.items;
 
+    const itemsData = computed(() => items.map((item) => {
+        return getItemContent(item.$ref);
+    }));
+
     // Filter out any content that doesn't use the Place content type.
     const itemRefs = computed(() => items.filter((item) => {
-        const data = page.getContent(item.$ref).model.data;
+        const data = getItemContent(item.$ref);
+        
         if (data.contentType === 'brxsaas:Place') {
-            return data;
+            return data; 
         }
+
     }).slice(0, itemsPerPage.value));
+
+    const addPlacesToStore = () => {
+        placesStore.updatePlaces(itemsData);
+    }
+
+    function getItemContent(ref){
+        return page.getContent(ref).model.data;
+    }
 
     function showMore() {
         itemsPerPage.value = Object.keys(itemRefs).length;
         viewAll.value = true;
     }
+
+    onMounted(() => {
+        addPlacesToStore();
+    })
+    
 </script>
 
 <style lang="scss" scoped>

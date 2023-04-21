@@ -2,6 +2,7 @@
     <div class="col-12 col-sm-6 col-lg-4">
         <div class="card mb-4 vs-card">
             <img class="card-img-top" :src="imageUrl" alt="" />
+            <Star />
             <div class="card-body">
                 <h3 class="card-title h5">{{ data.title }}</h3>
         
@@ -31,6 +32,12 @@
 </script>
 
 <style lang="scss" scoped>
+    .star{
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
 	a {
 		color: #af006e;
         font-weight: bold;

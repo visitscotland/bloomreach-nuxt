@@ -1,8 +1,8 @@
 <template>
     <svg
         @click="toggleSelected"
-        width="25"
-        height="23"
+        width="36"
+        height="36"
         viewBox="0 0 25 23"
         class="star"
         :class="starStyle"
@@ -31,9 +31,9 @@
 </script>
 
 <style scoped>
-
     .star {
         stroke: purple;
+        stroke-width: 2;
     }
     .unselected{
         transition: 0.1s ease-in;
