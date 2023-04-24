@@ -17,6 +17,7 @@ import Place from './components/Place.vue';
 // Get url of current page.
 const route = useRoute().path;
 
+// Get API endpoint from the server side.
 const { data: endpoint } = await useFetch('/api/getEndpoint');
 
 const configuration = {
