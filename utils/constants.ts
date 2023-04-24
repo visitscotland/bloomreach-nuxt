@@ -1,1 +1,0 @@
-export const ENDPOINT = process.env.VUE_APP_BRXM_ENDPOINT;
