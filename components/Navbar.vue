@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
 			<a class="navbar-brand" href="/">
-				<img class="logo" src="map-marker.png" alt="Trip Planner logo" />
+				<img class="logo" src="/map-marker.png" alt="Trip Planner logo" />
 				Trip Planner
 			</a>
 
