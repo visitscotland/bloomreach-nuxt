@@ -52,17 +52,17 @@
 
     }).slice(0, itemsPerPage.value));
 
+    function showMore() {
+        itemsPerPage.value = Object.keys(itemRefs).length;
+        viewAll.value = true;
+    }
+
     const addPlacesToStore = () => {
-        placesStore.updatePlaces(itemsData);
+        placesStore.updatePlaces(itemsData)
     }
 
     function getItemContent(ref){
         return page.getContent(ref).model.data;
-    }
-
-    function showMore() {
-        itemsPerPage.value = Object.keys(itemRefs).length;
-        viewAll.value = true;
     }
 
     onMounted(() => {
