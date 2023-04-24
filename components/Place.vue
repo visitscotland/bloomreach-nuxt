@@ -2,7 +2,7 @@
     <div class="col-12 col-sm-6 col-lg-4">
         <div class="card mb-4 vs-card">
             <img class="card-img-top" :src="imageUrl" alt="" />
-            <Star />
+            <Star @favourited="favourited" :favourited="favourite" />
             <div class="card-body">
                 <h3 class="card-title h5">{{ data.title }}</h3>
         
@@ -29,10 +29,17 @@
 	// Get the image content and URL.
 	const imageContent = props.page.getContent(data.image.$ref);
 	const imageUrl = imageContent.getOriginal().getUrl();
+
+    const favourite = ref(false)
+
+    function favourited() {
+        // Toggle favourite
+        favourite.value = !favourite.value;
+    }
 </script>
 
 <style lang="scss" scoped>
-    .star{
+    .star-btn{
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;

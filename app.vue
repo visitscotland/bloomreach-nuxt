@@ -13,14 +13,16 @@ import Banner from './components/Banner.vue';
 import Grid from './components/Grid.vue';
 import Article from './components/Article.vue';
 import Place from './components/Place.vue';
-import { ENDPOINT } from './utils/constants';
 
 // Get url of current page.
 const route = useRoute().path;
 
+// Get API endpoint from the server side.
+const { data: endpoint } = await useFetch('/api/getEndpoint');
+
 const configuration = {
     path: route,
-    endpoint: ENDPOINT,
+    endpoint: endpoint.value,
     httpClient: axios,
 };
 const mapping = { ContentPage, Banner, Grid, Article, Place };
